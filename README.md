@@ -12,6 +12,25 @@ Compilation is done automatically with GitHub Actions. The binaries are uploaded
 
 Therefore, it is recommended to download the binaries from the release section.
 
+## Building on Linux with Docker
+```
+docker build -t nmap_linux_build .
+//x86_64
+docker run -v /home/ubuntu/static-toolbox/x86_64:/output nmap_linux_build
+
+//x86
+mkdir x86
+docker run -v /home/ubuntu/static-toolbox/x86:/output nmap_linux_build x86
+
+//arm
+mkdir arm
+docker run -v /home/ubuntu/static-toolbox/arm:/output nmap_linux_build armhf
+
+//aarch64
+mkdir aarch64
+docker run -v /home/ubuntu/static-toolbox/aarch64:/output nmap_linux_build aarch64
+```
+
 ## Building Status
 
 The following table shows the building status for the current toolset. The following architectures are currently supported:

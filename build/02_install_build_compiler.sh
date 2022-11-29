@@ -11,7 +11,7 @@ case $ARCH in
     x86)
         ARCH="i686-linux-musl"
         ;;
-    arm)
+    arm|armhf)
         ARCH="arm-linux-musleabihf"
         ;;
     *)
