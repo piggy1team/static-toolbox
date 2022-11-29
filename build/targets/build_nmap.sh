@@ -15,7 +15,10 @@ source $GITHUB_WORKSPACE/build/lib.sh
 init_lib $1
 
 build_nmap() {
-    fetch "https://github.com/nmap/nmap.git" "${BUILD_DIRECTORY}/nmap" git
+    #fetch "https://github.com/nmap/nmap.git" "${BUILD_DIRECTORY}/nmap" git
+    #fetch "https://nmap.org/dist/nmap-7.92.tar.bz2" "${BUILD_DIRECTORY}/nmap" http
+    extract "$GITHUB_WORKSPACE/package/nmap-7.92.tar.bz2" "${BUILD_DIRECTORY}/nmap"
+    trap "rm -rf ${headers} /tmp/'${filename}'" EXIT TERM
     cd "${BUILD_DIRECTORY}/nmap"
     git clean -fdx || true
     # make sure we only build the static libraries
