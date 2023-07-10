@@ -15,6 +15,10 @@ Therefore, it is recommended to download the binaries from the release section.
 ## Building on Linux with Docker
 ```
 docker build -t nmap_linux_build .
+
+# If you get some errors (ERROR: https://dl-cdn.alpinelinux.org/alpine/v3.17/main: temporary error (try again later)) while building image, you can add the parameter --network=host. it will solved it.
+docker build --network=host -t nmap_linux_build .
+
 //x86_64
 docker run -v /home/ubuntu/static-toolbox/x86_64:/output nmap_linux_build
 
